@@ -13,7 +13,7 @@ function Categories() {
 
     const [newCategory, setNewCategory] = useState('');
     const [categoryType, setCategoryType] = useState('income');
-    const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(false) ;
     const [selectedCategory, setSelectedCategory] = useState("");
     const [budget, setBudget] = useState('');
     const [CatusedBudget, setUsedBudget] = useState('');
