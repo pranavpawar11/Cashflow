@@ -17,7 +17,7 @@ function Signup() {
     const onsubmit = async (e) => {
         e.preventDefault();
         if (signUpCred.password === signUpCred.cpassword) {
-            const response = await fetch('https://cashflow-backend-3nmj.onrender.com/api/auth/createuser', {
+            const response = await fetch('http://localhost:5000/api/auth/createuser', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json',
