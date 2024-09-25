@@ -1,0 +1,23 @@
+.sticky-tabs .nav-item .nav-link {
+  color: #5b5b5b !important;
+  background-color: #f5f7fa !important;
+}
+
+.sticky-tabs .nav-item .nav-link.active {
+  background-color: #3c3c3c !important;
+  color: #ffffff !important;
+}
+
+ul {
+  padding: 0;
+}
+
+.category-main-list{
+  display: flex;
+  justify-content: space-between;
+}
+
+.category-sub-list{
+  display: flex;
+  justify-content: space-between;
+}

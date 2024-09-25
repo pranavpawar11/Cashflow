@@ -1,0 +1,132 @@
+.all-transactions {
+  font-size: 16px;
+}
+
+.transactions-card {
+  /* border-radius: 15px; */
+  
+  border-top-right-radius:0px ;
+  border-top-left-radius:0px ;
+  border-bottom-left-radius:15px ;
+  border-bottom-right-radius:15px ;
+  height: 65vh;
+  overflow-y: auto;
+}
+
+.section-head{
+  /* border-radius:  15px; */
+  display: flex;
+  justify-content: center;
+  
+  border-bottom-left-radius:0px ;
+  border-bottom-right-radius:0px ;
+  /* border: transparent; */
+}
+.title-card{
+  padding-bottom:0px;
+  margin-bottom: 0px;
+}
+.title {
+  font-size: 2rem;
+  color: #4a90e2;
+  font-weight: 600;
+}
+
+.selected-month {
+  font-weight: 500;
+}
+
+.no-transactions {
+  color: #d0021b;
+}
+
+.action-button {
+  padding: 0.25rem 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .all-transactions {
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .all-transactions {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .table-responsive {
+    font-size: 14px;
+  }
+
+  .action-button {
+    padding: 0.2rem 0.4rem;
+  }
+}
+
+/* Base styles for larger screens (desktops and tablets) */
+.filter-month-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.filter-dropdown {
+  flex: 1;
+}
+
+.month-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile-specific styles */
+/* @media (max-width: 450px) {
+    .filter-month-container {
+        flex-direction: row;
+        align-items: center;
+        
+    }
+
+    .filter-dropdown,
+    .month-buttons {
+        width: 100%;
+        margin-bottom: 0.5rem; 
+    }
+
+    .filter-dropdown {
+        margin-bottom: 0;
+    }
+
+    .month-buttons {
+        display: flex;
+        align-items: center;
+    }
+
+    .month-buttons button {
+        flex: 1;
+    }
+} */
+th {
+  font-weight: 600;
+}
+tr {
+  font-size: large;
+}
+
+
+/* to hide the heading  */
+@media (max-width: 767px){
+.allTransactions-heading{
+ display: none;
+}
+}

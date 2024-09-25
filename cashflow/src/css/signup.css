@@ -1,0 +1,150 @@
+    /* Base Styles */
+.main-div {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    border: 1px solid #4A90E2; /* Soft Blue */
+    background-color: #FFFFFF; /* White */
+    width: 100%;
+    max-width: 380px;
+    padding: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.heading h2 {
+    color: #4A4A4A; /* Dark Gray */
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 26px; /* Slightly larger for emphasis */
+    text-align: center;
+}
+
+.heading p {
+    color: #B7B7B7; /* Light Gray */
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+.inputs {
+    width: 100%;
+}
+
+.input-group {
+    background-color: #F5F7FA; /* Cool Gray */
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 15px; /* Increased margin for better spacing */
+}
+
+.input-group-text {
+    background-color: #F5F7FA; /* Cool Gray */
+    color: #4A90E2; /* Soft Blue */
+    border: none;
+}
+
+.form-control {
+    border: none;
+    color: #4A4A4A; /* Dark Gray */
+    background-color: #F5F7FA; /* Cool Gray */
+    padding: 10px; /* Increased padding for better touch area */
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Spacing between elements */
+}
+
+.btn-primary {
+    background-color: #4A90E2; /* Soft Blue */
+    border-color: #4A90E2; /* Soft Blue */
+    color: #FFFFFF; /* White */
+    padding: 12px 20px; /* Larger padding for better touch area */
+    border-radius: 5px;
+    width: 100%; /* Full width on mobile */
+    font-weight: bold;
+    font-size: 16px; /* Slightly larger font for emphasis */
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #3A7ECB; /* Slightly darker blue */
+    border-color: #3A7ECB;
+}
+
+.login {
+    margin-top: 15px; /* Reduced margin to save space */
+}
+
+.login p {
+    color: #B7B7B7; /* Light Gray */
+    font-size: 14px;
+    text-align: center; /* Centered text on mobile */
+}
+
+.login a {
+    color: #7ED321; /* Green */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login a:hover {
+    color: #D0021B; /* Red */
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .main-div {
+        width: 90%; /* Width adjusts to smaller screens */
+        padding: 20px; /* Reduced padding */
+        gap: 20px;
+    }
+
+    .heading h2 {
+        font-size: 24px; /* Adjust font size for mobile */
+    }
+
+    .heading p {
+        font-size: 14px; /* Adjust font size for mobile */
+    }
+
+    .btn-primary {
+        padding: 10px 16px; /* Adjust padding for smaller screens */
+        font-size: 15px; /* Slightly smaller font for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-div {
+        width: 95%; /* Width adjusts to very small screens */
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .heading h2 {
+        font-size: 22px; /* Adjust font size for very small screens */
+    }
+
+    .btn-primary {
+        padding: 8px 14px; /* Smaller padding for small screens */
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .login p {
+        font-size: 12px; /* Smaller font size for login text */
+    }
+}

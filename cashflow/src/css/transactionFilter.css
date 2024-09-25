@@ -1,0 +1,21 @@
+.search-main{
+    padding-top: 15px;
+}
+.filter-month-container{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (max-width: 767px) {
+    .filter-options-amount {
+        margin-top: 10px;
+        padding-top: 5px ;
+        width: 50%;
+    }
+    .search-main{
+        width: 100%;
+    }
+}

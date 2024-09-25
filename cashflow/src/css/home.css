@@ -1,0 +1,134 @@
+.home-container {
+  background-color: #f8f9fa;
+}
+
+.overview-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #ffffff;
+}
+
+.overview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.icon-bg {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #4e73df 0%, #1cc88a 100%);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-container .card-title {
+  font-size: 1.25rem;
+}
+
+.text-container .card-text {
+  font-size: 1.75rem;
+}
+
+.chart-card {
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-placeholder {
+  height: 200px;
+  background-color: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.welcome-text {
+  font-size: 2rem;
+  color: #4e73df;
+}
+
+.btn-primary {
+  background-color: #17a2b8;
+  border: none;
+}
+
+.btn-danger {
+  background-color: #e83e8c;
+  border: none;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.chart-card {
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  height: 400px; /* Ensure the card has enough height */
+}
+
+.chart-card canvas {
+  display: block; /* Ensure canvas is block-level */
+  width: 100%; /* Ensure canvas takes full width of the card */
+  height: 100%; /* Ensure canvas takes full height of the card */
+}
+/* Ensure the parent container uses full width and aligns its content */
+.d-flex {
+  display: flex;
+}
+
+.justify-content-md-end {
+  justify-content: flex-end; /* Align items to the right on medium and larger screens */
+}
+
+/* Style for the month-buttons container */
+.month-buttons {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for buttons */
+.month-button {
+  background-color: transparent; /* No background color */
+  border: none; /* Remove border */
+  color: #007bff; /* Button color */
+  font-size: 1.5rem; /* Icon size */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.month-button:hover {
+  color: #0056b3; /* Darker color on hover */
+}
+
+/* Style for the selected month */
+.selected-month {
+  font-size: 1.5rem; /* Adjust font size for better visibility */
+  font-weight: bold; /* Make the text bold */
+  color: #333; /* Dark color for better visibility */
+  margin: 0 10px; /* Space between buttons and month text */
+}
+
+/* Optional: Adjust text sizes in welcome and overview texts */
+.welcome-text {
+  font-size: 2rem; /* Larger font size for welcome text */
+}
+
+.text-muted {
+  font-size: 1rem; /* Smaller font size for the overview text */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767.98px) {
+  .selected-month {
+      font-size: 1.2rem; /* Smaller font size on mobile screens */
+      margin: 0 5px; /* Reduce space between buttons and month text */
+  }
+  .justify-content-md-end{
+  justify-content: center;
+  }
+  .month-buttons {
+      justify-content: center; /* Center the buttons on smaller screens */
+  }
+}
