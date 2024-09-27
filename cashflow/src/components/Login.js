@@ -68,8 +68,8 @@ function Login() {
 
                 <div className="signup">
                     <p>
-                        Don’t have an account?
-                        <NavLink to="/signup">Sign up</NavLink>
+                        Don’t have an account?  
+                        <NavLink to="/signup">  Sign up</NavLink>
                     </p>
                 </div>
             </div>

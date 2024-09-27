@@ -82,38 +82,38 @@ const CategoryList = (props) => {
                     >
                       <FontAwesomeIcon
                         icon={faInfoCircle}
-                        className={isBudgetExceeded(category) ? 'text-warning' : 'text-info'}
+                        className={isBudgetExceeded(category) ? 'text-warning mx-2' : 'text-success mx-2'}
                       />
                     </Button>
                   </OverlayTrigger>
                 )}
-                { props.type === 'expense' && (<Button
-                  variant="outline-primary"
+                {props.type === 'expense' && (<Button
+                  variant="outline-secondary"
                   size="sm"
                   className="me-2"
                   onClick={() => props.handleDisplayModal(category, props.usedBudget[category.category] || 0)}
                 >
-                  <FontAwesomeIcon icon={faPencilAlt} className="me-1" />
-                  {isMobile ? 'Details' : 'Edit'}
+                  <FontAwesomeIcon icon={faPencilAlt} className={!isMobile ? 'me-2' : ''} />
+                  {!isMobile && 'Edit'}
                 </Button>)}
                 <Button
                   variant="outline-danger"
                   size="sm"
                   onClick={() => props.handleDeleteCategory(category.category, props.type)}
                 >
-                  <FontAwesomeIcon icon={faTrash} className="me-1" />
+                  <FontAwesomeIcon icon={faTrash} className={!isMobile ? 'me-2' : ''} />
                   {!isMobile && 'Delete'}
                 </Button>
               </div>
             </div>
           </div>
           {isMobile && props.type === 'expense' && (
-            <div className="d-flex justify-content-between mt-2">
-              <small className="text-muted">
-                Budget: <span className="fw-semibold">₹{category.limit || 0}</span>
+            <div className="d-flex justify-content-between mt-2 pt-2">
+              <small className="text-muted fw-semibold">
+                Budget: <span className="fw-bold">₹{category.limit || 0}</span>
               </small>
-              <small className={`${isBudgetExceeded(category) ? 'text-warning' : 'text-muted'}`}>
-                Used: <span className="fw-semibold">₹{props.usedBudget[category.category] || 0}</span>
+              <small className={`${isBudgetExceeded(category) ? 'text-warning' : 'text-muted fw-semibold'}`}>
+                Used: <span className="fw-bold">₹{props.usedBudget[category.category] || 0}</span>
               </small>
             </div>
           )}

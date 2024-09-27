@@ -74,7 +74,7 @@ function Signup() {
                 <div className="login">
                     <p>
                         Already have an account?
-                        <NavLink to="/login">Log in</NavLink>
+                        <NavLink to="/login"> Log in</NavLink>
                     </p>
 
                 </div>

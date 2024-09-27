@@ -144,7 +144,7 @@ function Home() {
             }
         };
         // eslint-disable-next-line 
-    }, [ transactionsData]);
+    }, [ selectedMonth,transactionsData]);
 
     useEffect(() => {
         const updateChartData = async () => {

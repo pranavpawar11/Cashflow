@@ -49,18 +49,20 @@ function Navbar() {
               </ul>
             </div>
           )}
-          <div className="navbar-right">
-            {localStorage.getItem('authToken') && (
 
+          {localStorage.getItem('authToken') && (
+            <div className="navbar-right">
               <button className="logout-btn" onClick={logout}>
                 <LogOut size={18} />
                 <span className="logout-text">Logout</span>
               </button>
-            )}
-            <button className="menu-toggle" onClick={toggleMenu}>
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+
+              <button className="menu-toggle" onClick={toggleMenu}>
+                {isOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+
+            </div>
+          )}
         </div>
       </nav>
       {isOpen && (
