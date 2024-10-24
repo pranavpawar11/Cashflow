@@ -12,7 +12,8 @@ const ManageExpense = (props) => {
   const [expenseCategories, setExpenseCategories] = useState([]);
   const [incomeCategories, setIncomeCategories] = useState([]);
   const [usedBudget, setusedBudget] = useState([]);
-  const [allCategory, setCategories] = useState(['cat1', 'cat2'])
+  const [allCategory, setCategories] = useState(['cat1', 'cat2']);
+  const [userData, setuserData] = useState([])
 
   const showAlert = (msg, type) => {
     setAlert({ msg, type });
@@ -25,6 +26,27 @@ const ManageExpense = (props) => {
     return localStorage.getItem('authToken');
   };
 
+  const getuserDetails = async () => {
+    const token = getAuthToken();
+    if (!token) {
+      console.error('No authentication token found');
+      return;
+    }
+    const response = await fetch(`${host}/api/auth/getuser`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'auth-token': token
+      }
+    });
+    const json = await response.json();
+    
+    if (json.success) {
+      setuserData(json.data);
+    } else {
+      console.log("Error in fetching transactions from DB");
+    }
+  }
   // months handling 
 
   const months = [
@@ -432,7 +454,7 @@ const ManageExpense = (props) => {
 
 
   return (
-    <ExpenseCURD.Provider value={{ alert, transactionsData, allCategory, setTransactionsData, showAlert, getTransactions, groupTransactionsByMonthYear, onlytransactions, setOnlyTransactions, deleteTransaction, updateTransaction, addnewTransaction, initializeGraphData, initializeCurrentMonthGraphData, calculateTotalsAndBudget, fetchCategories, selectedMonth, setSelectedMonth, handlePreviousMonth, handleNextMonth, addNewCategory, deleteCategory, updateCategoryLimit, expenseCategories, incomeCategories, usedBudget }}>
+    <ExpenseCURD.Provider value={{ alert,userData, transactionsData, allCategory, getuserDetails,setTransactionsData, showAlert, getTransactions, groupTransactionsByMonthYear, onlytransactions, setOnlyTransactions, deleteTransaction, updateTransaction, addnewTransaction, initializeGraphData, initializeCurrentMonthGraphData, calculateTotalsAndBudget, fetchCategories, selectedMonth, setSelectedMonth, handlePreviousMonth, handleNextMonth, addNewCategory, deleteCategory, updateCategoryLimit, expenseCategories, incomeCategories, usedBudget }}>
       {props.children}
     </ExpenseCURD.Provider>
   );

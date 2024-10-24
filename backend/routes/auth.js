@@ -54,7 +54,6 @@ router.post('/createuser', [
             category :{
                 new_category
             }
-
         }
 
         const authToken = jwt.sign(data, JWT_SECRET);
@@ -113,12 +112,15 @@ router.post('/login', [
 
 // Route 3 for fetching the user  /api/auth/getuser
 
-router.post('/getuser', fetchuser, async (req, res) => {
+router.get('/getuser', fetchuser, async (req, res) => {
 
     try {
         userId = req.user.id;
         const user = await User.findById(userId).select("-password")
-        res.send(user);
+        res.send({
+            success: true,
+            data:user
+        });
     }
     catch (err) {
         console.log(err.message)

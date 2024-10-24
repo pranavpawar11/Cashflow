@@ -13,7 +13,7 @@ Chart.register(...registerables);
 
 function Home() {
     const context = useContext(ExpenseContext);
-    const { selectedMonth, getTransactions, initializeCurrentMonthGraphData, calculateTotalsAndBudget, initializeGraphData, transactionsData, handleNextMonth, handlePreviousMonth, } = context;
+    const { selectedMonth, getTransactions, initializeCurrentMonthGraphData, calculateTotalsAndBudget, initializeGraphData, transactionsData, handleNextMonth, handlePreviousMonth, getuserDetails,userData } = context;
     const [cardData, setCardData] = useState([]);
     const navigate = useNavigate();
     // eslint-disable-next-line
@@ -31,6 +31,7 @@ function Home() {
                 navigate('/login');
             } else {
                 await getTransactions();
+                await getuserDetails();
             }
         }
         initalTrasactionsData()
@@ -144,7 +145,7 @@ function Home() {
             }
         };
         // eslint-disable-next-line 
-    }, [ selectedMonth,transactionsData]);
+    }, [selectedMonth, transactionsData]);
 
     useEffect(() => {
         const updateChartData = async () => {
@@ -193,7 +194,7 @@ function Home() {
 
         updateChartData();
         // eslint-disable-next-line 
-    }, [ selectedMonth, transactionsData]);
+    }, [selectedMonth, transactionsData]);
 
 
 
@@ -202,7 +203,7 @@ function Home() {
         <Container fluid className="home-container py-4">
             <Row className="mb-4 align-items-center">
                 <Col xs={12} md={6}>
-                    <h1 className="welcome-text">Hello, Pranav!</h1>
+                    <h1 className="welcome-text">Hello, {userData?.name?.split(" ")[0] ?? "User"}</h1>
                     <p className="text-muted">Here's your financial overview of {selectedMonth.split(" ")[0]}.</p>
                 </Col>
                 <Col xs={12} md={6} className="d-flex justify-content-md-end">
