@@ -4,10 +4,11 @@ const User = require('../models/User');
 const { body, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const fetchuser = require('../middlewear/fetchuser');
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const Category = require('../models/Categories');
 
 const JWT_SECRET = "thisIsaJWTwebtoken1231"
+
 
 // Route 1 :  creating new user on /api/auth/createuser ? without login
 router.post('/createuser', [

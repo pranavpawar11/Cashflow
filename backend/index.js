@@ -5,7 +5,7 @@ const app = express()
 const path = require('path'); ;
 
 connectToMongo();
-const port = 5000;
+const port = 5002;
 
 const  _dirname = path.resolve();
 app.use(cors());
