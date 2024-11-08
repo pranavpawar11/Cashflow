@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ExpenseCURD from "./expenseContext";
 
 const ManageExpense = (props) => {
-  const host = 'http://localhost:5000';
+  const host = 'https://cashflow-ze4z.onrender.com';
   const [alert, setAlert] = useState({ msg: "", type: "" });
 
   const initalTrasactions = [];
